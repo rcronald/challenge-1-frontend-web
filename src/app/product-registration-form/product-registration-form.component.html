@@ -1,0 +1,21 @@
+<p>Register your product on the form below.</p>
+<form class="form"
+      [formGroup]="productRegistrationForm">
+  <div class="form-group">
+    <label for="serial-number">Serial number</label>
+    <input type="text"
+           id="serial-number"
+           formControlName="serialNumber"
+           required/>
+    <ul class="errors"
+        *ngIf="serialNumberField.invalid && serialNumberField.dirty"
+        [ngSwitch]="true">
+      <li *ngSwitchCase="serialNumberField.hasError('required')">Serial number is required</li>
+    </ul>
+  </div>
+  <div class="form-actions">
+    <button type="submit"
+            [disabled]="!productRegistrationForm.valid">Submit
+    </button>
+  </div>
+</form>

@@ -1,0 +1,30 @@
+---
+version: 1.0
+configuration:
+  has_webserver: true
+  scoring:
+    command: npm run hackerrank:install && npm run hackerrank:test
+    files:
+      - junit-report.xml
+  readonly_paths:
+    - src/app/app.component.spec.ts
+    - src/test.ts
+    - angular.js
+    - karma.conf.js
+    - package.json
+    - tsconfig.app.json
+    - tsconfig.json
+    - tsconfig.spec.json
+  ide_config:
+    default_open_files:
+      - src/app/app.component.html
+      - src/app/app.component.ts
+      - src/app/app.module.ts
+      - src/app/product-registration-form/product-registration-form.component.html
+      - src/app/product-registration-form/product-registration-form.component.ts
+      - src/app/success-message/success-message.component.html
+      - src/app/success-message/success-message.component.ts
+    project_menu:
+      install: npm run hackerrank:install
+      run: npm run hackerrank:run
+      test: npm run hackerrank:test
